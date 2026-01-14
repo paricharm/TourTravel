@@ -1,0 +1,52 @@
+body {
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+    background-color: #0c0a18; /* Un fondo más oscuro, casi negro azulado */
+  }
+  
+  #background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    cursor: none;
+  }
+  
+  .glass-card {
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(55, 65, 81, 0.4);
+    transition: all 0.3s ease;
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .form-input::placeholder {
+    color: rgba(156, 163, 175, 0.6);
+  }
+  
+  #status-message {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  #status-message.show {
+    opacity: 1;
+    max-height: 100px;
+  }
